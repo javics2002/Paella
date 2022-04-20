@@ -8,6 +8,9 @@ Puerta::Puerta(Game* game, Vector2D<double> pos,bool vertical_,int t_Max,int tam
 	cola = new Cola(t_Max);
 	vertical = vertical_;
 	maxTamGrupo = tamMaxGrupo_;
+
+	//Siempre tiene que funcionar
+	funcionando = true;
 }
 
 void Puerta::update()

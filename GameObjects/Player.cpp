@@ -7,6 +7,7 @@
 #include "Ingrediente.h"
 #include "Muebles/Mueble.h"
 #include "Arroz.h"
+#include "Herramienta.h"
 
 #include "../Utils/Traza.h"
 
@@ -152,6 +153,13 @@ void Player::handleInput()
 				break;
 			case ARROZ:
 				if (m != nullptr && m->receiveArroz(dynamic_cast<Arroz*>(pickedObject_))) {
+					pickedObject_->dropObject();
+					pickedObject_ = nullptr;
+				}
+				break;
+			case HERRAMIENTA:
+				if (m != nullptr && m->receiveHerramienta(dynamic_cast<Herramienta*>(pickedObject_))) 
+				{
 					pickedObject_->dropObject();
 					pickedObject_ = nullptr;
 				}

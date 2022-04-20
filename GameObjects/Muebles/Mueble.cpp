@@ -7,6 +7,8 @@ Mueble::Mueble(Game* game, Vector2D<double> position, int width, int height, str
 	setPosition(position.getX() + getWidth() / 2, position.getY() + getHeight() / 2);
 	setTexture(claveTextura);
 
+	funcionando = true;
+
 	timerTexture = &sdlutils().images().at("timer");
 }
 
@@ -34,4 +36,23 @@ SDL_Rect Mueble::getOverlap()
 		rect.w,
 		rect.h / 2 - incr
 	};
+}
+
+bool Mueble::receiveHerramienta(Herramienta* h)
+{
+	funcionando = true;
+	return false;
+}
+
+bool Mueble::testMueble()
+{
+	float rnd = rand() % randomOptions + 1;
+
+	if (rnd <= roto)
+	{
+		funcionando = false;
+		roto -=5; //Para que cada vez sea más difícil que se rompa
+	}
+		
+	return funcionando;
 }

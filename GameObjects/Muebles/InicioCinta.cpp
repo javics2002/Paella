@@ -5,6 +5,8 @@
 InicioCinta::InicioCinta(Game* game, Vector2D<double> pos) : Mueble(game, pos, TILE_SIZE, TILE_SIZE, "inicioCinta")
 {
 	initTime = sdlutils().virtualTimer().currTime();
+	//Siempre tiene que funcionar
+	funcionando = true;
 }
 
 void InicioCinta::update()

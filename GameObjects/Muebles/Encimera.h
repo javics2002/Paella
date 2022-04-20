@@ -20,3 +20,5 @@ public:
 	virtual bool receiveArroz(Arroz* pa) override;
 };
 
+
+

@@ -6,6 +6,8 @@
 
 Encimera::Encimera(Game* game, Vector2D<double> pos) : Mueble(game, pos, 1 * TILE_SIZE, 2 * TILE_SIZE, "encimera")
 {
+	//Siempre tiene que funcionar
+	funcionando = true;
 }
 
 bool Encimera::receiveIngrediente(Ingrediente* ingr)
@@ -19,7 +21,7 @@ bool Encimera::receiveIngrediente(Ingrediente* ingr)
 
 		return true;
 	}
-	
+
 	else if (paella_ != nullptr) {
 
 		if (paella_->ingrValido(ingr) && paella_->conArroz() && ingr->getProcesado()) {
@@ -64,9 +66,9 @@ bool Encimera::receiveArroz(Arroz* arr)
 		else
 		{
 			return false;
-		}		
+		}
 	}
-	
+
 	else if (ingr_ == nullptr && arroz == nullptr) {
 
 		arroz = arr;
@@ -108,3 +110,4 @@ bool Encimera::returnObject(Player* p)
 	else
 		return false;
 }
+
